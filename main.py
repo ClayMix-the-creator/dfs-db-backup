@@ -1,5 +1,6 @@
 # Import downloaded modules
 import schedule
+from dotenv import load_dotenv
 
 # Import built-in modules
 import os
@@ -9,6 +10,7 @@ from datetime import datetime
 
 
 # Load environment variables
+load_dotenv()
 DB_HOST = os.getenv("PGDB_HOST", "localhost")
 DB_PORT = os.getenv("PGDB_PORT", "5432")
 DB_USER = os.getenv("PGDB_USER", "user")
@@ -27,7 +29,7 @@ print("Made backup directory")
 def backup_postgresql():
     """Creates a timestamped backup of the PostgreSQL database."""
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    backup_file = f"/{BACKUP_DIR}/backup_{timestamp}.sql"
+    backup_file = f"./{BACKUP_DIR}/backup_{timestamp}.sql"
 
     # pg_dump command
     command = f'PGPASSWORD="{DB_PASSWORD}" pg_dump -h {DB_HOST} -p {DB_PORT} -U {DB_USER} -d {DB_NAME} > {backup_file}'

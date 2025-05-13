@@ -1,2 +1,2 @@
-.env
-/backups/backup*
+/backups_metadata/*
+/backups_web/*

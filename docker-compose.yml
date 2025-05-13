@@ -41,4 +41,3 @@ volumes:
 
 networks:
   web-network:
-    external: true

@@ -1,0 +1,45 @@
+name: metadata-db-service
+services:
+  db:
+    image: postgres:alpine
+    container_name: ${CONTAINER_DB}
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - postgres_data_metadata:/var/lib/postgresql/data
+    ports:
+      - "${DB_PORT}:5432"
+    networks:
+      - dfs_network
+
+  backup:
+    build: .
+    container_name: ${CONTAINER_BACKUP}
+    volumes:
+      - ./${BACKUP_DIR}:/app/${BACKUP_DIR}
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_NAME: ${DB_NAME}
+      BACKUP_DIR: ${BACKUP_DIR}
+      BACKUP_PORT: ${BACKUP_PORT}
+      BACKUP_REMOVAL: ${BACKUP_REMOVAL}
+      BACKUP_INTERVAL: ${BACKUP_INTERVAL}
+    ports:
+      - "${BACKUP_PORT}:8000"
+    depends_on:
+      - db
+    networks:
+      - dfs_network
+
+volumes:
+  postgres_data_metadata:
+
+networks:
+  dfs_network:
+    name: 'dfs_network'
+    external: true

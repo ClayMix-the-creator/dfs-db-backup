@@ -1,6 +1,6 @@
-# DFS DB Backup 🔄💾
+# DFS DB and Backup Service 💾🔄
 
-A robust and distributed database backup solution designed for cloud-native environments. Part of Distributed File System Project with:
+A robust and distributed database startup and backup solution designed for cloud environments. Part of the Distributed File System Project with:
 - [Nikita Maximenko](https://github.com/Nexonm)
 - [Ilsaf Abdulkhakov](https://github.com/harutoyume)
 
@@ -11,11 +11,12 @@ Check out other Project Repositories:
 
 ## Overview 📖
 
-DFS DB Backup is a high-performance backup utility that seamlessly integrates with distributed file systems (DFS) to provide reliable, scalable database backups. Ideal for enterprise environments and distributed systems requiring consistent data protection.
+DFS Database and Backup service is a database startup and its backup utility that seamlessly integrates with distributed file systems (DFS) to provide a reliable and scalable service. Ideal for enterprise environments and distributed systems that require consistent data protection.
 
 **Key Features**:
-- 🚀 Automated database backups to distributed storage
-- ⏱️ Point-in-time recovery capabilities
+- 💾 Running a PostgreSQL database
+- 🚀 Automated database backup
+- ⏱️ Point-in-time restore capability.
 - 🔄 Cross-platform compatibility
 - 📋 Detailed backup auditing
 

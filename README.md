@@ -56,7 +56,7 @@ BACKUP_REMOVAL_AMOUNT=<Max amount of backup files | 0 to disable>
 BACKUP_REMOVAL_DAYS=<Max amount of days since backup created | 0 to disable>
 BACKUP_REMOVAL_HOURS=<Max amount of hours since backup created | 0 to disable>
 BACKUP_REMOVAL_MINUTES=<Max amount of minutes since backup created | 0 to disable>
-BACKUP_REMOVAL_SECONDS=<Max amount of seconds since backup created | 0 disable>
+BACKUP_REMOVAL_SECONDS=<Max amount of seconds since backup created | 0 to disable>
 BACKUP_REMOVAL=...
 
 BACKUP_INTERVAL_AMOUNT=<Backup creation time interval>
